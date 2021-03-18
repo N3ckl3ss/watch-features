@@ -19,13 +19,30 @@ export default {
     },
 methods:{
    onClick(){
-      let index = parseInt(this.imageIndex)
-       this.nextRow(index);
+       this.nextRow(parseInt(this.imageIndex));
    }
 }
 }
 </script>
 
 <style>
-    
-</style>
+img{
+   width: 70%;
+   height: 70%;
+   position: relative;
+   top: 20%;
+   left: 15%;
+   color: white;
+ }
+.slider{
+   height: 657px;
+}
+ #range{
+   width: 50%;
+   position: absolute;
+   opacity: 0.5;
+   top: 90%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+ }
+ </style>

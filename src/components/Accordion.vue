@@ -1,4 +1,5 @@
 <template>
+<div id ="accrdion">
    <vsa-list >
   <vsa-item   
     v-for="(feature, index) in accordionFetures"
@@ -13,6 +14,7 @@
         </vsa-content>
   </vsa-item>
 </vsa-list>
+</div>
 </template>
 
 <script>
@@ -48,4 +50,16 @@ export default {
 </script>
 
 <style>
+.vsa-list{
+    --vsa-text-color: white;
+    --vsa-border-style: none;
+    --vsa-bg-color: rgb(25,25,25); 
+    --vsa-highlight-color: rgb(214,214,214);
+    --vsa-max-width: 650px;
+    --vsa-default-icon-size: 0.5;
+    --vsa-heading-padding: 1rem 1rem;
+    --vsa-content-padding: 0.5rem 3rem;
+    position: absolute;
+    top: 5%;
+}
 </style>
