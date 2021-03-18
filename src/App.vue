@@ -1,19 +1,36 @@
 <template>
   <div id="app">
-    <Slider>
-    <Accordion>
+    <b-container class="bv-example-row">
+      <b-row>
+        <b-col sm="6" >
+          <Slider
+          :fetures= "features"/>
+        </b-col>
+         <b-col sm="6" >
+          <Accordion
+          :accordionFetures= "features"/>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
 <script>
 import Slider from './components/Slider.vue'
 import Accordion from './components/Accordion.vue'
+import json from './assets/data2.json'
 
 export default {
   name: 'App',
   components: {
     Slider,
     Accordion
+  },
+  data(){
+    return{
+      features: json,
+      index: 0
+    }
   }
 }
 </script>
