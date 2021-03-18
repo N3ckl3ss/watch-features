@@ -31,7 +31,6 @@ export default {
     },
     methods: {
         onHeadingClick(data) {
-            console.log('Heading clicked', data);
             let index = -1;
             for(let key in data.list.$children) {
                 if (data.list.$children[key]._uid === data.item._uid) {

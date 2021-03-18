@@ -5,6 +5,7 @@
         <b-col sm="7" >
           <Slider
           :fetures= "features[index]"
+          :imageIndex = "index"
           :nextRow = "nextRow"/>
         </b-col>
          <b-col sm="5" >
@@ -32,15 +33,15 @@ export default {
   data(){
     return{
       features: json,
-      index: 2
+      index: 0
     }
   },
   methods: {
     changeImg(imageIndex) {
      return this.index = parseInt(imageIndex)
     },
-    nextRow(){
-      this.index++;
+    nextRow(event){
+      this.index = event
     }
   }
 }
