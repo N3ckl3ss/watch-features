@@ -1,19 +1,19 @@
 <template>
 <div id ="accrdion">
-   <vsa-list >
-  <vsa-item   
-    v-for="(feature, index) in accordionFetures"
-    :key="index"
-    :force-active="isForced(index)"
-    :on-heading-click="onHeadingClick">
-        <vsa-heading >
-            {{feature.title}}
-        </vsa-heading>
-        <vsa-content>
-            {{feature.content}}
-        </vsa-content>
-  </vsa-item>
-</vsa-list>
+    <vsa-list >
+        <vsa-item   
+        v-for="(feature, index) in accordionFetures"
+        :key="index"
+        :force-active="isForced(index)"
+        :on-heading-click="onHeadingClick">
+            <vsa-heading >
+                {{feature.title}}
+            </vsa-heading>
+             <vsa-content>
+                {{feature.content}}
+             </vsa-content>
+        </vsa-item>
+    </vsa-list>
 </div>
 </template>
 
@@ -24,7 +24,8 @@ export default {
       type: Array
     },
         imageIndex: Number,
-         changeImg: Function
+       //the function used to sand back values to the parent and through it the other childe
+        changeImg: Function
     },
     data() {
         return{
@@ -32,6 +33,7 @@ export default {
         }
     },
     methods: {
+        //I'm so sorry about this
         onHeadingClick(data) {
             let index = -1;
             for(let key in data.list.$children) {
@@ -42,8 +44,9 @@ export default {
             }
             this.changeImg(index)
         },
+        //Handels what tabs must be open and what neds to be closed
         isForced(index) {
-                return index === this.imageIndex
+            return index === this.imageIndex
         },
     }
 }

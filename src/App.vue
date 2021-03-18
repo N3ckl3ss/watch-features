@@ -41,7 +41,8 @@ export default {
   methods: {
     //The method rewrites theindex of both the Accordion and the Slider component
     changeImg(imageIndex) {
-      this.index = imageIndex
+    //Needs to be a number so just I "prased" it
+      this.index = parseInt(imageIndex)
     }
   }
 }
