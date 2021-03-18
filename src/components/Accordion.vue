@@ -44,7 +44,7 @@ export default {
             }
             this.changeImg(index)
         },
-        //Handels what tabs must be open and what neds to be closed
+        //Handels what tabs must be open and what needs to be closed
         isForced(index) {
             return index === this.imageIndex
         },

@@ -1,30 +1,30 @@
 <template>
 <div class="slider" >
    <img :src="fetures.image_url" >
-   <!-- Couldn't do the specifick slider in the design but I hope this is suficiant!-->
+   <!-- Couldn't do the specifick slider in the design but I hope this is sufficient!-->
    <input type="range" class="custom-range" min="0" max="5" id="range" v-model="imageIndex"  @input="onClick">
 </div>
 </template>
 
 <script>
 export default {
-    props:{
+   props:{
        fetures: Object,
-       //the function used to sand back values to the parent and through it the other childe
+       //the function used to send back values to the parent and through it the other childe
        nextRow: Function,
        imageIndex: Number
-    },
-    data(){
+   },
+   data(){
        return{
          value:this.imageIndex
        }
-    },
-methods:{
+   },
+   methods:{
    //Gets value of slider
-   onClick(){
-       this.nextRow(parseInt(this.imageIndex));
+      onClick(){
+         this.nextRow(parseInt(this.imageIndex));
+      }
    }
-}
 }
 </script>
 

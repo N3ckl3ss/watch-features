@@ -3,13 +3,13 @@
     <b-container class="bv-row" fluid >
       <b-row cols-sm="2">
         <b-col sm="6" >
-          <Slider id="grad"
+          <Slider id="slider"
           :fetures= "features[index]"
           :imageIndex = "index"
           :nextRow = "changeImg"/>
         </b-col>
         <b-col  sm="6"  >
-          <Accordion id="data"
+          <Accordion 
           :accordionFetures= "features"
           :imageIndex= "index"
           :changeImg="changeImg"/>
@@ -39,9 +39,9 @@ export default {
     }
   },
   methods: {
-    //The method rewrites theindex of both the Accordion and the Slider component
+    //The method rewrites the index of both the Accordion and the Slider component
     changeImg(imageIndex) {
-    //Needs to be a number so just I "prased" it
+    //Needs to be a number so I just "prased" it
       this.index = parseInt(imageIndex)
     }
   }
@@ -59,7 +59,7 @@ export default {
   height: 100%;
 }
 
-#grad {
+#slider {
   background-image: linear-gradient(rgb(18,18,18), white, rgb(18,18,18));
 }
 </style>
