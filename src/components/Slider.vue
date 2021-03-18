@@ -1,14 +1,20 @@
 <template>
 <div class="slider">
-   <img :src="fetures.image_url">
+   <img :src="fetures.image_url" @click="onClick()">
 </div>
 </template>
 
 <script>
 export default {
     props:{
-       fetures: Object
-    }
+       fetures: Object,
+       nextRow: Function
+    },
+methods:{
+   onClick(){
+      this.nextRow()
+   }
+}
 }
 </script>
 

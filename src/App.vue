@@ -4,11 +4,14 @@
       <b-row>
         <b-col sm="7" >
           <Slider
-          :fetures= "features[index]"/>
+          :fetures= "features[index]"
+          :nextRow = "nextRow"/>
         </b-col>
          <b-col sm="5" >
           <Accordion
-          :accordionFetures= "features"/>
+          :accordionFetures= "features"
+          :imageIndex= "index"
+          :changeImg="changeImg"/>
         </b-col>
       </b-row>
     </b-container>
@@ -29,7 +32,15 @@ export default {
   data(){
     return{
       features: json,
-      index: 0
+      index: 2
+    }
+  },
+  methods: {
+    changeImg(imageIndex) {
+     return this.index = parseInt(imageIndex)
+    },
+    nextRow(){
+      this.index++;
     }
   }
 }

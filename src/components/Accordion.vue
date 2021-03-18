@@ -3,8 +3,8 @@
   <vsa-item   
     v-for="(feature, index) in accordionFetures"
     :key="index"
-    :on-heading-click="onHeadingClick"
-    :force-active="isForced(index)">
+    :force-active="isForced(index)"
+    :on-heading-click="onHeadingClick">
         <vsa-heading >
             {{feature.title}}
         </vsa-heading>
@@ -20,19 +20,29 @@ export default {
     props: {
         accordionFetures:  {
       type: Array
-    }
+    },
+        imageIndex: Number,
+         changeImg: Function
     },
     data() {
         return{
-            index: 0
+            index: this.imageIndex
         }
     },
     methods: {
-         onHeadingClick(data) {
-            this.index = data;
+        onHeadingClick(data) {
+            console.log('Heading clicked', data);
+            let index = -1;
+            for(let key in data.list.$children) {
+                if (data.list.$children[key]._uid === data.item._uid) {
+                    index = key;
+                    break;
+                }
+            }
+            this.changeImg(index)
         },
         isForced(index) {
-                return index === this.index
+                return index === this.imageIndex
         },
     }
 }
