@@ -2,8 +2,10 @@
    <vsa-list >
   <vsa-item   
     v-for="(feature, index) in accordionFetures"
-    :key="index">
-        <vsa-heading>
+    :key="index"
+    :on-heading-click="onHeadingClick"
+    :force-active="isForced(index)">
+        <vsa-heading >
             {{feature.title}}
         </vsa-heading>
         <vsa-content>
@@ -22,10 +24,16 @@ export default {
     },
     data() {
         return{
+            index: 0
         }
     },
     methods: {
-        
+         onHeadingClick(data) {
+            this.index = data;
+        },
+        isForced(index) {
+                return index === this.index
+        },
     }
 }
 </script>

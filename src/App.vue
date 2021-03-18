@@ -2,11 +2,11 @@
   <div id="app">
     <b-container class="bv-example-row">
       <b-row>
-        <b-col sm="6" >
+        <b-col sm="7" >
           <Slider
-          :fetures= "features"/>
+          :fetures= "features[index]"/>
         </b-col>
-         <b-col sm="6" >
+         <b-col sm="5" >
           <Accordion
           :accordionFetures= "features"/>
         </b-col>
