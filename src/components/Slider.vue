@@ -33,7 +33,7 @@ img{
    width: 70%;
    height: 70%;
    position: relative;
-   top: 20%;
+   top: 15%;
    left: 15%;
    color: white;
  }
